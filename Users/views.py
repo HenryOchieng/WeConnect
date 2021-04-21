@@ -11,12 +11,13 @@ def register(request):
         if form.is_valid():
             form.save()
             username = form.cleaned_data.get('username')
+            profile_pic=form.cleaned_data.get('profile_pic')
             messages.success(request, f'Account created for {username}.')
             return redirect('login')
     else:
         form = UserRegisterForm()
     return render(request, 'Users/register.html', {'form':form})
-
+   
 @login_required 
 def profile(request):
     if request.method == 'POST':
@@ -31,7 +32,7 @@ def profile(request):
     else:
         uform = UserUpdateForm(instance=request.user)
         pform = ProfileUpdateForm(instance=request.user.profile)
-    return render(request, 'Users/profile.html', {'uform': uform, 'pform': pform})
+    return render(request, 'Users/profile.html', {'uform': uform}, {'pform': pform})
 
 @login_required
 def SearchView(request):

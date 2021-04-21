@@ -1,11 +1,13 @@
 from django.db import models
 from django.contrib.auth.models import User
+#import pylibjpeg_libjpeg
 from PIL import Image
 
 # Create your models here.
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    image = models.ImageField(default='default.jpg', upload_to='profile_pics')
+    image = models.ImageField(upload_to='profile_pics', default='client.ico')
+    
 
     def __str__(self):
         return f'{self.user.username} Profile'
@@ -17,9 +19,10 @@ class Profile(models.Model):
     @property
     def following(self):
         return Follow.objects.filter(user=self.user).count()
-    def save(self, force_insert=False, force_update=False, using=None, update_field=None):
+
+    def save(self, force_insert=False, force_update=False, using=None, update_fields=None):
         super().save()
-        img= Image.open(self.image.path)
+        img = Image.open(self.image.path)
         if img.height > 300 or img.width > 300:
             output_size = (300, 300)
             img.thumbnail(output_size)

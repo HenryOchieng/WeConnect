@@ -23,7 +23,7 @@
                     </div>
                     {% else %}
                     <div class="mt-2 d-flex full-width align-items-center">
-                        <img class="rounded-circle mr-3" style="width:90px; height:90px;" src="{{ user.profile.image.url }}">
+                        <img class="rounded-circle mr-3 img-fluid" style="width:90px; height:90px;" src="{{ user.profile.image.url }}">
                         <div>
                             <h4 style="text-align: left" class="white-important">
                                 {{ user.username }}
@@ -110,8 +110,7 @@
                 </div>
                 <div class="col-6 no-padding">
                     <h6 style="position:absolute; bottom:0; right:0" class="white-important mb-3">
-                        {{ page_obj.start_index }} - {{ page_obj.end_index }} of 
-                        {{ paginator.count }}
+                        {{ page_obj.start_index }} - {{ page_obj.end_index }} of {{ paginator.count }}
                     </h6>
                 </div>
             </div>
