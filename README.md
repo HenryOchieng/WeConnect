@@ -11,7 +11,7 @@
 This is a django-based twitter clone web application with functionalities same as a twitter application.
 	
 ## Technologies
-Project is created with:
+This project was created using:
 * Python version 3.8.7
 * Django verion 3.1.6
 * Bootstrap version 4
