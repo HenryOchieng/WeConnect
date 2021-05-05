@@ -29,9 +29,9 @@ Once the user registers by signing up/creating account, they can:
 
 ## Setup
 
-1. Git Clone the project with: ```git clone https://github.com/HenryOchieng/Henry-Ndaga.git```.
+1. Git Clone the project with: ```git clone https://github.com/HenryOchieng/WeConnect.git```.
 
-2. Move to the base directory: ```cd Henry-Ndaga```
+2. Move to the base directory: ```cd WeConnect```
 
 3. Create a new python enveronment with: ```python -m venv env```.
 
